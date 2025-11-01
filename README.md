@@ -31,8 +31,9 @@ titanic-data-predictor/
 ├── Dockerfile                    # Python environment
 ├── .gitignore
 └── README.md
+```
 
-📊 Dataset
+## 📊 Dataset
 
 The dataset is provided by Kaggle’s Titanic: Machine Learning from Disaster
  competition.
@@ -61,7 +62,7 @@ src/data/test.csv
 src/data/gender_submission.csv
 
 
-🐍 Python Container
+## 🐍 Python Container
 🧩 Purpose
 
 Builds a Python environment that reads Titanic data, cleans missing values, trains a logistic regression model, and evaluates accuracy on both train and test datasets.
@@ -100,7 +101,7 @@ Model: sklearn.linear_model.LogisticRegression
 
 Output: src/data/titanic_predictions.csv
 
-📈 R Container
+## 📈 R Container
 🧩 Purpose
 
 Builds an R environment that loads the Titanic dataset, performs data cleaning, trains a logistic regression model, and prints performance metrics.
@@ -129,7 +130,7 @@ Step 5: Saving predictions...
 Saved: src/data/titanic_predictions_r.csv
 Script finished successfully.
 
-🧠 Technical Details
+## 🧠 Technical Details
 
 Base image: rocker/tidyverse:4.3.2
 
@@ -146,7 +147,7 @@ Model: glm() logistic regression
 Output: src/data/titanic_predictions_r.csv
 
 
-🧪 Reproducibility Notes
+## 🧪 Reproducibility Notes
 
 Both Dockerfiles are fully automated.
 
@@ -158,7 +159,7 @@ The R image uses rocker/tidyverse for guaranteed dependency stability.
 
 
 
-✍️ Author
+## ✍️ Author
 
 Tyrone Li
 Northwestern University
