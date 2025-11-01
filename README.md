@@ -1,19 +1,27 @@
-🚢 Titanic Data Predictor
-Northwestern University – MLDS 413: Introduction to Data Engineering
+<<<<<<< Updated upstream
+# titanic-data-predictor
+=======
+# 🚢 Titanic Data Predictor  
+### Northwestern University – MLDS 413: Introduction to Data Engineering  
+**Homework 3**
 
-Homework 3
+---
 
-📘 Overview
+## 📘 Overview
 
-This project builds two reproducible Docker environments — one in Python and one in R — to analyze passenger data from the Titanic disaster (April 15, 1912) and predict survival outcomes using logistic regression.
+This project builds **two reproducible Docker environments** — one in **Python** and one in **R** — to analyze passenger data from the Titanic disaster (April 15, 1912) and predict survival outcomes using logistic regression.
 
-Each Dockerfile runs independently and produces printed outputs directly in the terminal.
+Each Dockerfile runs independently and produces printed outputs directly in the terminal.  
 The grader can reproduce results by simply cloning this repository, downloading the dataset, and running two commands per environment.
 
-📂 Repository Structure
+---
+
+## 📂 Repository Structure
+
+```plaintext
 titanic-data-predictor/
 ├── src/
-│   ├── data/
+│   ├── data/                     # contains local CSV files (not committed)
 │   │   ├── train.csv
 │   │   ├── test.csv
 │   │   └── gender_submission.csv
@@ -24,7 +32,7 @@ titanic-data-predictor/
 │       ├── install_package.R
 │       └── titanic_model.R
 ├── requirements.txt
-├── Dockerfile                # Python environment
+├── Dockerfile                    # Python environment
 ├── .gitignore
 └── README.md
 
@@ -35,24 +43,27 @@ The dataset is provided by Kaggle’s Titanic: Machine Learning from Disaster
 
 Required files
 
-After downloading from Kaggle, place these CSVs into your local directory:
+After downloading from Kaggle, you’ll have:
+
+train.csv
+
+test.csv
+
+gender_submission.csv
+
+Before building your Docker images, make sure these files are placed correctly:
+
+1️⃣ Create the data folder (if it doesn’t exist):
+
+mkdir -p src/data
+
+
+2️⃣ Move the CSV files into that folder:
 
 src/data/train.csv
 src/data/test.csv
 src/data/gender_submission.csv
 
-
-⚠️ Do not include these files in your public repository per assignment requirements.
-Your grader should download them directly from Kaggle.
-
-🧰 Prerequisites
-
-Docker Desktop
- installed and running
-
-Internet connection for installing dependencies on first build
-
-Kaggle Titanic CSV files placed in src/data/
 
 🐍 Python Container
 🧩 Purpose
@@ -70,7 +81,7 @@ docker build -t titanic-py .
 
 docker run titanic-py
 
-🧾 Expected Console Output
+🧾 Expected Output
 Loading data...
 Training logistic regression...
 Training accuracy: 0.799
@@ -81,7 +92,7 @@ Predictions saved to src/data/titanic_predictions.csv
 
 Base image: python:3.12-slim
 
-Dependencies: Installed via requirements.txt
+Dependencies: from requirements.txt
 
 pandas
 numpy
@@ -89,14 +100,14 @@ scikit-learn
 joblib
 
 
-Model: Logistic Regression (sklearn.linear_model.LogisticRegression)
+Model: sklearn.linear_model.LogisticRegression
 
-Output file: src/data/titanic_predictions.csv
+Output: src/data/titanic_predictions.csv
 
 📈 R Container
 🧩 Purpose
 
-Builds an R environment that loads the same Titanic dataset, performs data cleaning, trains a logistic regression model, and prints performance metrics in the console.
+Builds an R environment that loads the Titanic dataset, performs data cleaning, trains a logistic regression model, and prints performance metrics.
 
 🪜 Steps to Run
 
@@ -109,7 +120,7 @@ docker build -t titanic-r -f src/r/Dockerfile .
 
 docker run titanic-r
 
-🧾 Expected Console Output
+🧾 Expected Output
 Step 1: Loading data...
 train.csv shape: 891 rows, 12 columns
 test.csv shape: 418 rows, 11 columns
@@ -126,53 +137,35 @@ Script finished successfully.
 
 Base image: rocker/tidyverse:4.3.2
 
-This image includes the full tidyverse (dplyr, ggplot2, readr, tidyr, etc.) preinstalled
-ensuring fast, reproducible builds with zero dependency errors.
+Includes the full tidyverse (dplyr, ggplot2, readr, tidyr, etc.) pre-installed
+for fast, reproducible builds.
 
 Additional package installed:
 
-install.packages("caret", repos = "https://packagemanager.posit.co/cran/__linux__/jammy/latest")
+install.packages("caret", repos="https://packagemanager.posit.co/cran/__linux__/jammy/latest")
 
 
 Model: glm() logistic regression
 
-Output file: src/data/titanic_predictions_r.csv
+Output: src/data/titanic_predictions_r.csv
+
 
 🧪 Reproducibility Notes
 
 Both Dockerfiles are fully automated.
 
-No data or manual package installation is required once the dataset is placed in src/data/.
+No manual package installation once the dataset is present.
 
-All model outputs print directly in the terminal for easy grading.
+Outputs print directly in the terminal.
 
-The R environment uses rocker/tidyverse to guarantee compatibility on all systems.
-
-🧾 Example Grader Workflow
-
-Once cloned and dataset is added, the grader can run:
-
-# Python container
-docker build -t titanic-py .
-docker run titanic-py
-
-# R container
-docker build -t titanic-r -f src/r/Dockerfile .
-docker run titanic-r
+The R image uses rocker/tidyverse for guaranteed dependency stability.
 
 
-✅ Both containers will execute end-to-end and print outputs.
 
-📦 Expected Deliverables
-File	Description
-Dockerfile	Python environment with logistic regression
-src/scripts/titanic_model.py	Python ML script
-src/r/Dockerfile	R environment using rocker/tidyverse
-src/r/titanic_model.R	R ML script
-README.md	Detailed build and run instructions
 ✍️ Author
 
 Tyrone Li
 Northwestern University
-MLDS 413: Introduction to Data Engineering
+MLDS 413 – Introduction to Data Engineering
 Fall 2025
+>>>>>>> Stashed changes
