@@ -12,8 +12,7 @@
 This project builds **two reproducible Docker environments** — one in **Python** and one in **R** — to analyze passenger data from the Titanic disaster (April 15, 1912) and predict survival outcomes using logistic regression.
 
 Each Dockerfile runs independently and produces printed outputs directly in the terminal.  
-The grader can reproduce results by simply cloning this repository, downloading the dataset, and running two commands per environment.
-
+The result can reproduce results by simply cloning this repository, downloading the dataset, and running two commands per environment.
 ---
 
 ## 📂 Repository Structure
