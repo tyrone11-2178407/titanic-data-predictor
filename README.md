@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# titanic-data-predictor
-=======
 # 🚢 Titanic Data Predictor  
 ### Northwestern University – MLDS 413: Introduction to Data Engineering  
 **Homework 3**
@@ -167,4 +164,4 @@ Tyrone Li
 Northwestern University
 MLDS 413 – Introduction to Data Engineering
 Fall 2025
->>>>>>> Stashed changes
+
