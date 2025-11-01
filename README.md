@@ -2,7 +2,7 @@
 ### Northwestern University – MLDS 413: Introduction to Data Engineering  
 **Homework 3**
 
----
+
 
 ## 📘 Overview
 
@@ -10,7 +10,7 @@ This project builds **two reproducible Docker environments** — one in **Python
 
 Each Dockerfile runs independently and produces printed outputs directly in the terminal.  
 The result can reproduce results by simply cloning this repository, downloading the dataset, and running two commands per environment.
----
+
 
 ## 📂 Repository Structure
 
